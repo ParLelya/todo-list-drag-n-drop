@@ -1,24 +1,8 @@
-const item = document.querySelector(".item");
+let item = document.querySelector(".item");
 const placeholders = document.querySelectorAll(".placeholder");
 const addTask = document.querySelector(".todo__input");
 
-item.addEventListener("dragstart", dragStart);
-item.addEventListener("dragend", dragEnd);
-addTask.addEventListener("click", function (event) {
-  if (event.target.closest(".todo__add")) {
-    todo.add();
-    todo.save();
-  }
-});
-
-for (placeholder of placeholders) {
-  placeholder.addEventListener("dragover", dragOver);
-  placeholder.addEventListener("dragenter", dragEnter);
-  placeholder.addEventListener("dragleave", dragLeave);
-  placeholder.addEventListener("drop", dragDrop);
-}
-
-let todo = {
+const todo = {
   add() {
     const inputText = document.querySelector(".todo__text");
     if (!inputText.value.length) return;
@@ -33,10 +17,10 @@ let todo = {
   },
 
   save() {
-    localStorage.setItem(
-      "draggable-todo",
-      document.querySelector(".todo__items").innerHTML
-    );
+    // localStorage.setItem(
+    //   "draggable-todo",
+    //   document.querySelector(".todo__items").innerHTML
+    // );
   },
 
   load() {
@@ -45,7 +29,29 @@ let todo = {
   },
 };
 
-todo.load();
+// todo.load();
+
+addTask.addEventListener("click", function (event) {
+  if (event.target.closest(".todo__add")) {
+    todo.add();
+    todo.save();
+  }
+});
+
+document
+  .querySelector(".todo__items")
+  .addEventListener("mouseover", (event) => {
+    item = event.target.closest(".todo__task");
+    item.addEventListener("dragstart", dragStart);
+    item.addEventListener("dragend", dragEnd);
+  });
+
+for (let placeholder of placeholders) {
+  placeholder.addEventListener("dragover", dragOver);
+  placeholder.addEventListener("dragenter", dragEnter);
+  placeholder.addEventListener("dragleave", dragLeave);
+  placeholder.addEventListener("drop", dragDrop);
+}
 
 function dragStart(event) {
   event.target.classList.add("hold");
