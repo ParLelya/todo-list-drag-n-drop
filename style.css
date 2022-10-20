@@ -6,8 +6,8 @@
 body {
   font-family: "Marck Script", cursive;
   background-color: #f8bfff;
-  display: flex;
   padding-top: 5rem;
+  display: flex;
   justify-content: center;
   overflow: hidden;
   margin: 0;
@@ -24,7 +24,7 @@ h1 {
 }
 
 .todo__text {
-  width: 700px;
+  width: 800px;
   padding: 15px 34px 15px 10px;
   font-size: inherit;
   font-family: "Open Sans", sans-serif;
@@ -60,8 +60,8 @@ h1 {
 
 .row {
   display: flex;
-  width: 700px;
-  justify-content: space-between;
+  width: 800px;
+  justify-content: space-around;
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
@@ -76,8 +76,12 @@ h1 {
 }
 
 .item {
-  width: 150px;
-  height: 66px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   border: 3px solid #f7703b;
@@ -97,8 +101,8 @@ h1 {
 }
 
 .placeholder {
-  width: 150px;
-  min-height: 200px;
+  width: 250px;
+  min-height: 400px;
 }
 
 .start {

@@ -1,35 +1,40 @@
 let item = document.querySelector(".item");
 const placeholders = document.querySelectorAll(".placeholder");
 const addTask = document.querySelector(".todo__input");
+const field = document.querySelector(".todo__items");
+
+// const fromStorage = localStorage.getItem("drag-todo");
+// if (fromStorage) field.innerHTML = fromStorage;
 
 const todo = {
   add() {
     const inputText = document.querySelector(".todo__text");
     if (!inputText.value.length) return;
     document
-      .querySelector(".todo__item")
+      .querySelector(".placeholder")
       .insertAdjacentHTML("beforeend", this.create(inputText.value));
     inputText.value = "";
   },
 
   create(text) {
-    return `<div class="item todo__task" draggable="true">${text}</div>`;
+    return `<div class="item" draggable="true">${text}</div>`;
+  },
+
+  delete() {
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Delete" && item) {
+        item.remove();
+      }
+    });
+    this.save();
   },
 
   save() {
-    // localStorage.setItem(
-    //   "draggable-todo",
-    //   document.querySelector(".todo__items").innerHTML
-    // );
-  },
-
-  load() {
-    // const fromStorage = localStorage.getItem("draggable-todo");
-    // if (fromStorage) document.querySelector(".todo__items").innerHTML = fromStorage;
+    // localStorage.setItem("drag-todo", field.innerHTML);
   },
 };
 
-// todo.load();
+todo.delete();
 
 addTask.addEventListener("click", function (event) {
   if (event.target.closest(".todo__add")) {
@@ -38,13 +43,11 @@ addTask.addEventListener("click", function (event) {
   }
 });
 
-document
-  .querySelector(".todo__items")
-  .addEventListener("mouseover", (event) => {
-    item = event.target.closest(".todo__task");
-    item.addEventListener("dragstart", dragStart);
-    item.addEventListener("dragend", dragEnd);
-  });
+field.addEventListener("mouseover", (event) => {
+  item = event.target.closest(".item");
+  item.addEventListener("dragstart", dragStart);
+  item.addEventListener("dragend", dragEnd);
+});
 
 for (let placeholder of placeholders) {
   placeholder.addEventListener("dragover", dragOver);
