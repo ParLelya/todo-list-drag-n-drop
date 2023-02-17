@@ -1,19 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Marck+Script&family=Open+Sans:ital,wght@1,300&display=swap");
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Marck Script", cursive;
   background-color: #f8bfff;
   padding-top: 5rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   overflow: hidden;
   margin: 0;
   text-align: center;
@@ -25,9 +20,7 @@ h1 {
 
 .todo__input {
   position: relative;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  align-self: center;
 }
 
 .todo__text {
@@ -51,39 +44,31 @@ h1 {
   margin: 0;
   border: none;
   background-color: transparent;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   cursor: pointer;
 }
-
 .todo__add svg {
   position: relative;
   vertical-align: middle;
   width: 38px;
   height: 38px;
 }
-
 .todo__add svg:hover {
   border-radius: 5px;
-  -webkit-box-shadow: 5px 7px 7px #a7eca7ee inset;
-          box-shadow: 5px 7px 7px #a7eca7ee inset;
+  box-shadow: 5px 7px 7px rgba(167, 236, 167, 0.9333333333) inset;
 }
 
 .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   width: 800px;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   margin-bottom: 1rem;
   margin-top: 1rem;
 }
 
 .col-header {
   width: 150px;
-  -webkit-box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
-          box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
+  box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
   border-radius: 20px;
   padding: 0.8rem 1rem;
   color: #fff;
@@ -91,29 +76,23 @@ h1 {
 }
 
 .item {
-  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   font-family: "Open Sans", sans-serif;
   font-weight: 300;
   border: 3px solid #f7703b;
-  -webkit-box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
-          box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
+  box-shadow: 4px 4px 9px rgba(198, 198, 198, 0.36);
   border-radius: 20px;
   background: #fce392 !important;
   padding: 0.8rem 1rem;
   margin-top: 5px;
   color: #373737;
   text-align: center;
-  cursor: -webkit-grab;
   cursor: grab;
 }
-
 .item:active {
-  cursor: -webkit-grabbing;
   cursor: grabbing;
 }
 
@@ -123,24 +102,20 @@ h1 {
 }
 
 .start {
-  background: -webkit-gradient(linear, left top, right top, from(#fc316e), to(#fa5757));
   background: linear-gradient(90deg, #fc316e 0%, #fa5757 100%);
 }
 
 .progress {
-  background: -webkit-gradient(linear, left top, right top, from(#fa5757), to(#f85a3e));
   background: linear-gradient(90deg, #fa5757 0%, #f85a3e 100%);
 }
 
 .done {
-  background: -webkit-gradient(linear, left top, right top, from(#fa5a3e), to(#fc8050));
   background: linear-gradient(90deg, #fa5a3e 0%, #fc8050 100%);
 }
 
 .hold {
   border: 3px dotted #f7703b;
-  -webkit-box-shadow: 3px 3px 3px #7a7a7a inset;
-          box-shadow: 3px 3px 3px #7a7a7a inset;
+  box-shadow: 3px 3px 3px #7a7a7a inset;
 }
 
 .hide {
@@ -149,24 +124,21 @@ h1 {
 
 .hovered {
   border-radius: 15px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#fce392b9), to(#f8bfff));
-  background: linear-gradient(180deg, #fce392b9 0%, #f8bfff 100%);
+  background: linear-gradient(180deg, rgba(252, 227, 146, 0.7254901961) 0%, #f8bfff 100%);
 }
 
 footer {
   width: 100%;
   position: fixed;
-  background-color: #f1e0bd94;
+  background-color: rgba(241, 224, 189, 0.5803921569);
   color: inherit;
   font-size: 1rem;
   font-family: inherit;
   bottom: 0;
 }
-
 footer p {
   position: relative;
   text-align: center;
   padding: 10px;
   font-size: 1.25rem;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
